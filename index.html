@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PLUMBERS NEAR ME — Sponsored by RKM Plumbing &amp; Heating</title>
+  <meta name="description" content="PLUMBERS NEAR ME - sponsored by RKM PLUMBING & HEATING. 07848969229. Call, text or WhatsApp to book a plumber fast." />
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#111827;
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --accent:#22c55e;
+      --border:#223;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Helvetica,Arial,sans-serif;
+      background: radial-gradient(1000px 600px at 10% 10%, #1f2937, #0b1020), var(--bg);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .card{
+      width:min(720px,100%);
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+      text-align:center;
+    }
+    h1{
+      margin:0 0 8px 0;
+      font-size: clamp(28px, 5vw, 44px);
+      letter-spacing:0.5px;
+    }
+    .sponsor{
+      margin:0 0 16px 0;
+      font-size: clamp(14px, 2.8vw, 18px);
+      color:var(--muted);
+      line-height:1.3;
+    }
+    .number{
+      font-size: clamp(28px, 6vw, 54px);
+      font-weight: 800;
+      margin: 12px 0 22px 0;
+      letter-spacing:0.5px;
+    }
+    .btns{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:10px}
+    .btn{
+      appearance:none;
+      border:1px solid rgba(255,255,255,0.15);
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:700;
+      text-decoration:none;
+      color:var(--text);
+      transition:transform .05s ease, background .2s ease, border-color .2s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,0.25)}
+    .btn.primary{background:var(--accent); color:#04110a; border-color:transparent}
+    .mini{margin-top:14px; font-size:13px; color:var(--muted)}
+    .copy-wrap{display:flex; gap:8px; justify-content:center; margin-top:8px}
+    .copy{
+      border:1px solid rgba(255,255,255,0.15);
+      background:transparent;
+      color:var(--text);
+      border-radius:10px;
+      padding:8px 12px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:999px;
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+    footer{margin-top:22px; font-size:12px; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="badge">Emergency, repairs &amp; installs</div>
+    <h1>PLUMBERS NEAR ME</h1>
+    <p class="sponsor">Sponsored by <strong>RKM PLUMBING &amp; HEATING</strong></p>
+    <div class="number" id="number">07848 969229</div>
+
+    <div class="btns">
+      <a class="btn primary" href="tel:+447848969229" aria-label="Call RKM Plumbing & Heating">📞 Call now</a>
+      <a class="btn" href="sms:+447848969229" aria-label="Send text message to RKM Plumbing & Heating">✉️ Text</a>
+      <a class="btn" href="https://wa.me/447848969229" target="_blank" rel="noopener" aria-label="Open WhatsApp chat with RKM Plumbing & Heating">💬 WhatsApp</a>
+    </div>
+
+    <div class="copy-wrap">
+      <button class="copy" id="copyBtn" aria-label="Copy phone number">Copy number</button>
+    </div>
+
+    <p class="mini">PLUMBERS NEAR ME - sponsored by RKM PLUMBING &amp; HEATING. 07848969229</p>
+    <footer>Serving Lincolnshire and surrounding areas • Fast, friendly &amp; reliable</footer>
+  </main>
+
+  <script>
+    const btn = document.getElementById('copyBtn');
+    const num = document.getElementById('number').innerText.replace(/\s+/g,'');
+    btn.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(num);
+        btn.textContent = 'Copied!';
+        setTimeout(()=> btn.textContent = 'Copy number', 1500);
+      }catch(e){
+        btn.textContent = 'Unable to copy';
+        setTimeout(()=> btn.textContent = 'Copy number', 1500);
+      }
+    });
+  </script>
+</body>
+</html>
